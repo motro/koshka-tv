@@ -7,11 +7,14 @@ import {YouTubePlayer} from "./components/youtube_player";
 export class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {videos: []};
+        this.state = {
+            videos: [],
+            criteria: 'cats'
+        };
     }
 
     componentDidMount() {
-        this.fetchVideos('cats');
+        this.fetchVideos(this.state.criteria);
     }
 
     async fetchVideos(criteria) {
@@ -27,12 +30,18 @@ export class App extends Component {
         this.setState({videoId});
     }
 
+    onSearchSubmit(criteria) {
+        this.setState({criteria}, () => {
+            this.fetchVideos(this.state.criteria);
+        });
+    }
+
     render() {
-        const {videos, videoId} = this.state;
+        const {videos, videoId, criteria} = this.state;
 
         return (
             <div className="App">
-                <Header />
+                <Header criteria={criteria} onSearchSubmit={this.onSearchSubmit.bind(this)} />
                 <div className="content">
                     <div className="left-column">
                     </div>
