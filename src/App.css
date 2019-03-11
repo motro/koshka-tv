@@ -63,6 +63,7 @@ body {
 
 .content .right-column .videos-list .video-thumb-item .video-thumb-title {
     margin-top: 5px;
+    font-size: 14px;
 }
 
 .content .right-column .videos-list .video-thumb-item + .video-thumb-item {
@@ -71,4 +72,13 @@ body {
 
 .main-column {
     flex: 1;
+}
+
+.video-player-container {
+    padding: 10px 50px;
+}
+
+.video-player-container .video-player iframe {
+    width: 100%;
+    height: 500px;
 }

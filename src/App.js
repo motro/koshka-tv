@@ -26,8 +26,8 @@ export class App extends Component {
         this.setState({videos});
     }
 
-    showVideo(videoId) {
-        this.setState({videoId});
+    showVideo(video) {
+        this.setState({video});
     }
 
     onSearchSubmit(criteria) {
@@ -37,7 +37,7 @@ export class App extends Component {
     }
 
     render() {
-        const {videos, videoId, criteria} = this.state;
+        const {videos, video, criteria} = this.state;
 
         return (
             <div className="App">
@@ -46,10 +46,10 @@ export class App extends Component {
                     <div className="left-column">
                     </div>
                     <div className="main-column">
-                        {videoId && <YouTubePlayer videoId={videoId}/>}
+                        {video && <YouTubePlayer video={video}/>}
                     </div>
                     <div className="right-column">
-                        <VideosList videos={videos} onItemClick={(videoId) => this.showVideo(videoId)} />
+                        <VideosList videos={videos} onItemClick={(video) => this.showVideo(video)} />
                     </div>
                 </div>
             </div>

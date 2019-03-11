@@ -7,7 +7,7 @@ export const VideosList = ({videos, onItemClick}) => (
 );
 
 export const VideosListItem = ({video, onClick}) => (
-    <div className="video-thumb-item" onClick={() => onClick(video.id.videoId)}>
+    <div className="video-thumb-item" onClick={() => onClick(video)}>
         <img src={video.snippet.thumbnails.default.url} className="video-thumb" />
         <div className="video-thumb-title">{video.snippet.title}</div>
     </div>
