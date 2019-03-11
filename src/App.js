@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Header} from "./components/header";
+import {VideosList} from "./components/videos_list";
 
 export class App extends Component {
     constructor(props) {
@@ -25,6 +26,7 @@ export class App extends Component {
         return (
             <div className="App">
                 <Header />
+                <VideosList videos={this.state.videos} />
             </div>
         );
     }
