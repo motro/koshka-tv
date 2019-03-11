@@ -46,7 +46,7 @@ export class App extends Component {
                     <div className="left-column">
                     </div>
                     <div className="main-column">
-                        {video && <YouTubePlayer video={video}/>}
+                        <YouTubePlayer video={video}/>
                     </div>
                     <div className="right-column">
                         <VideosList videos={videos} onItemClick={(video) => this.showVideo(video)} />
