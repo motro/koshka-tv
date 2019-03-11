@@ -46,6 +46,24 @@ body {
     overflow-x: scroll;
 }
 
+.content .right-column .videos-list {
+    padding: 10px 20px;
+}
+
+.content .right-column .videos-list .video-thumb {
+    width: 100%;
+    height: 130px;
+    border: 1px solid #cccccc;
+}
+
+.content .right-column .videos-list .video-thumb-item .video-thumb-title {
+    margin-top: 5px;
+}
+
+.content .right-column .videos-list .video-thumb-item + .video-thumb-item {
+    margin-top: 15px;
+}
+
 .main-column {
     flex: 1;
 }
