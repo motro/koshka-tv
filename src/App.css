@@ -82,3 +82,14 @@ body {
     width: 100%;
     height: 500px;
 }
+
+.left-column .navigation {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.left-column .navigation a+a {
+    margin-top: 15px;
+}

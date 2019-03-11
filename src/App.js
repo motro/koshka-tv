@@ -3,6 +3,7 @@ import './App.css';
 import {Header} from "./components/header";
 import {VideosList} from "./components/videos_list";
 import {YouTubePlayer} from "./components/youtube_player";
+import {Navigation} from "./components/navigation";
 
 export class App extends Component {
     constructor(props) {
@@ -44,6 +45,7 @@ export class App extends Component {
                 <Header criteria={criteria} onSearchSubmit={this.onSearchSubmit.bind(this)} />
                 <div className="content">
                     <div className="left-column">
+                        <Navigation onClick={(query) => this.onSearchSubmit(query)} />
                     </div>
                     <div className="main-column">
                         <YouTubePlayer video={video}/>
