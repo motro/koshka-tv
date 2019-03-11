@@ -3,6 +3,10 @@ import './App.css';
 import {Header} from "./components/header";
 
 export class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {videos: []};
+    }
 
     componentDidMount() {
         this.fetchVideos('cats');
@@ -12,9 +16,9 @@ export class App extends Component {
         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${criteria}&key=${process.env.REACT_APP_ACCESS_KEY}`;
         const response = await fetch(url);
         const json = await response.json();
-        const {items} = json;
+        const videos = json.items;
 
-        console.log(items);
+        this.setState({videos});
     }
 
     render() {
