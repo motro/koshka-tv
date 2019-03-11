@@ -26,7 +26,15 @@ export class App extends Component {
         return (
             <div className="App">
                 <Header />
-                <VideosList videos={this.state.videos} />
+                <div className="content">
+                    <div className="left-column">
+                    </div>
+                    <div className="main-column">
+                    </div>
+                    <div className="right-column">
+                        <VideosList videos={this.state.videos} />
+                    </div>
+                </div>
             </div>
         );
     }

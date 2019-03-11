@@ -1,3 +1,8 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
 .header {
     height: 70px;
     border-bottom: 1px solid #cccccc;
@@ -20,4 +25,27 @@
 
 .search-bar input:focus {
     outline: none;
+}
+
+.content {
+    display: flex;
+}
+
+.content .left-column, .content .right-column {
+    max-width: 300px;
+    height: calc(100vh - 71px);
+    flex: 1;
+}
+
+.content .left-column {
+    border-right: 1px solid #cccccc;
+}
+
+.content .right-column {
+    border-left: 1px solid #cccccc;
+    overflow-x: scroll;
+}
+
+.main-column {
+    flex: 1;
 }
