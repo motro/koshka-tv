@@ -42,7 +42,7 @@ export class App extends Component {
 
         return (
             <div className="App">
-                <Header criteria={criteria} onSearchSubmit={this.onSearchSubmit.bind(this)} />
+                <Header criteria={criteria} onSearchSubmit={this.onSearchSubmit.bind(this)} onQueryChange={(e) => this.setState({criteria: e.target.value})} />
                 <div className="content">
                     <div className="left-column">
                         <Navigation onClick={(query) => this.onSearchSubmit(query)} />
