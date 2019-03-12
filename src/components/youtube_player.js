@@ -1,10 +1,11 @@
 import React, {Fragment} from 'react';
+import {inject, observer} from 'mobx-react';
 
-export const YouTubePlayer = ({video}) => (
+export const YouTubePlayer = inject('videos')(observer(({videos}) => (
     <div className="video-player-container">
-        {video ? <YouTubeEmbed video={video} /> : 'Select a video to begin'}
+        {videos.currentVideo ? <YouTubeEmbed video={videos.currentVideo} /> : 'Select a video to begin'}
     </div>
-);
+)));
 
 export const YouTubeEmbed = ({video}) => (
     <Fragment>
