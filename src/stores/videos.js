@@ -1,9 +1,13 @@
-import {observable, action} from 'mobx';
+import {observable, action, observe} from 'mobx';
 
 class Videos {
     @observable videos = [];
     @observable currentVideo;
     @observable query = 'cats';
+
+    constructor() {
+        observe(this, 'query', this.fetch);
+    }
 
     @action.bound
     async fetch() {

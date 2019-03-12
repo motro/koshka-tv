@@ -9,12 +9,8 @@ import {observer, Provider} from 'mobx-react';
 
 @observer
 class AppLayout extends Component {
-    componentDidMount() {
-        videos.fetch();
-    }
 
-    onSearchSubmit(criteria) {
-        videos.query = criteria;
+    componentDidMount() {
         videos.fetch();
     }
 
@@ -22,10 +18,10 @@ class AppLayout extends Component {
         return (
             <Provider videos={videos}>
                 <div className="App">
-                    <Header criteria={videos.query} onSearchSubmit={this.onSearchSubmit.bind(this)} />
+                    <Header />
                     <div className="content">
                         <div className="left-column">
-                            <Navigation onClick={(query) => this.onSearchSubmit(query)} />
+                            <Navigation />
                         </div>
                         <div className="main-column">
                             <YouTubePlayer />
